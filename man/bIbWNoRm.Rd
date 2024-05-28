@@ -7,16 +7,11 @@
 bIbWNoRm(
   Data,
   Clusters = NULL,
-  MaxClusterSize = 3000,
-  scaling = NULL,
-  filter = FALSE,
+  Scaling = NULL,
   FilterExpression = 0,
   FilterCellNum = 10,
-  numGeneforEst = 2000,
-  divideforFast = TRUE,
-  numDivide = NULL,
   Method = c("KernSmooth", "SJ", "ucv", "bcv", "nrd"),
-  cutoff = 1.5,
+  Thresh = 1.5,
   BPPARAM = SerialParam()
 )
 }
@@ -33,6 +28,10 @@ Within and Between (bIbW) Samples Normalization of RNA-seq data
 }
 \examples{
 library(scran)
+library(BiocParallel)
+library(Qtools)
+library(dynutils)
+library(qsmooth)
 set.seed(12345)
 G <- 2000; n <- 600 # G: number of genes, n: number of cells
 mu <- rgamma(G, shape = 2, rate = 2)
