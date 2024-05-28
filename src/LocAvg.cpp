@@ -2,17 +2,16 @@
 #include <Rcpp.h>
 using namespace Rcpp;
 
-double weimean(NumericVector x, const double y, const double h, NumericVector z, const double a) {
+double WeightedAverage(NumericVector x, const double y, const double h, NumericVector z, const double a) {
   NumericVector d1 = (x - y)/h;
-  NumericVector d2 = ifelse( abs(x-y) < a * h, exp(- 0.5 * d1 * d1), 0);
-  double sumd2 = sum(d2);
-  double wm = sum( d2 * z )/sumd2;
-  return( wm );
+  NumericVector u = ifelse( abs(x-y) < a * h, exp(- 0.5 * d1 * d1), 0); /* u is the membership degree between the cells*/
+  double sumu = sum(u);    /* sum of all u */
+  double w = sum( u * z )/sumu;  /* weighted expression level of genes in the cells */
+  return(w);
 }
 
-
 // [[Rcpp::export]]
-List LocAvg(List NonZeroCell, List NonZeroGene, NumericVector r, NumericVector h, const double a) {
+List LocAvg(List NonZeroCell, List NonZeroGene, NumericVector pc, NumericVector b, const double Th) {
   int n = NonZeroCell.size();
   Rcpp::List output(n);
   
@@ -24,8 +23,8 @@ List LocAvg(List NonZeroCell, List NonZeroGene, NumericVector r, NumericVector h
       SEXP lg = NonZeroGene[indexc[g]];
       NumericMatrix gM(lg);
       NumericVector indexg = gM(0,_) - 1;
-      double hg = h[indexc[g]];
-      outc[g] = weimean(r[indexg], r[c], hg, gM(1,_), a);
+      double bw = b[indexc[g]];
+      outc[g] = WeightedAverage(pc[indexg], pc[c], bw, gM(1,_), Th);
     }
     output[c] = outc;
   }
