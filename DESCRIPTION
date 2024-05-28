@@ -1,0 +1,14 @@
+Package: bIbW
+Type: Package
+Title: Within and Between Samples Normalization of Single Cell RNA-seq Data
+Version: 1.0
+Date: 2024-05-23
+Author: Vikas Singh, Sunjae Lee 
+Maintainer: Vikas Singh <vikkysingh07@gmail.com>
+Description: The RNA-seq Data is clustered using quickCluster in scran, and Multfactor analysis was formed on each cluster or condition. Each condition is quantile into upper and lower quantiles using the midquantile function of Qtools and a confidence interval can be obtained using confint.midquantile.  On the upper and lower quantiles, PCA analysis is performed using prcomp to get the first principal component. The first principal component was used to measure the adaptive fuzzy weight of upper and lower quantile to get the expression level of the genes to find the scale factor and normalized data.
+License: GPL (>= 2)
+Imports: Rcpp (>= 1.0.12)
+LinkingTo: Rcpp
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
