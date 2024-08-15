@@ -1,4 +1,4 @@
-# bIbW: Normalization of Single-cell RNA-seq Data using Multi-factor with Adaptive Fuzzy Weight
+# bIbW: Normalization of Single-cell RNA-seq Data using partial least squares (PLS) with Adaptive Fuzzy Weight
 
 ## Installation
 ``` r
