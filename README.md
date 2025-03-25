@@ -1,5 +1,6 @@
 # bIbW
 
+<<<<<<< HEAD
 **bIbW**: *Between- and Within-sample Normalization for Single-cell RNA-seq Data Using Partial Least Squares and Adaptive Fuzzy Weights*
 
 This R package provides a normalization method for single-cell RNA-seq data that reduces variation across cells and conditions using partial least squares (PLS) regression and adaptive fuzzy weighting.
@@ -64,3 +65,10 @@ git push origin main
 
 
 
+=======
+Normalization of Single-cell RNA-seq Data Using PLS and Adaptive Fuzzy Weights
+
+## 🧬 Method Overview
+
+![Method Diagram](Images/Method.png)
+>>>>>>> 2500f96 (Add README.md and method figure)
