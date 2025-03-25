@@ -52,6 +52,9 @@ git commit -m "Add README.md to describe the package"
 git push origin main
 
 
+## 📊 Method Overview
+
+![Method Diagram](images/Method.png)
 
 
 
