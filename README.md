@@ -14,6 +14,9 @@ You can install the development version of `bIbW` from GitHub:
 # install.packages("devtools")
 devtools::install_github("vikkyak/bIbW")
 
+
+🛠️ Usage
+
 library(bIbW)
 
 # Simulate data
@@ -26,4 +29,35 @@ SimulatedData <- sapply(1:n, NB_cell)
 # Run normalization
 Clusters <- rep(1:2, each = 150)
 Result <- bIbWNoRm(Data = SimulatedData, Clusters = Clusters, Method = "KernSmooth")
+
+📖 Documentation
+
+Run ?bIbWNoRm in R after installing to access the full documentation.
+
+ Author
+Vikas Singh
+Email: vikkysingh07@gmail.com
+
+License
+This package is distributed under the MIT license.
+
+
+---
+
+### 🔹 3. Add, commit, and push
+
+```bash
+git add README.md
+git commit -m "Add README.md to describe the package"
+git push origin main
+
+
+
+
+
+
+
+
+
+
 
