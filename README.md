@@ -54,7 +54,7 @@ git push origin main
 
 ## 📊 Method Overview
 
-![Method Diagram](images/Method.png)
+![Method Diagram](Images/Method.png)
 
 
 
