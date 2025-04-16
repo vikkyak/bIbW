@@ -42,7 +42,7 @@ License
 This package is distributed under the MIT license.
 
 ## 📦 Real data and simulated datasets
-The real and simulated datasets code are briefly discussed in the results folder
+"The codes for the real and simulated datasets are located in the results folder."
 ---
 
 ### 🔹 3. Add, commit, and push
